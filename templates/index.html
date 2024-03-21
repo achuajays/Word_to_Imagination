@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Value Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card justify-center item-center">
+            <h1 class="text-3xl mb-4">Word To Imagination  <br> The True Line Poet For Your Idea</h1>
+            <form action="/" method="post" class="mb-4">
+                <label for="word" class="block mb-2">Enter a word:</label>
+                <input type="text" id="word" name="word" class="border rounded-md px-3 py-2 w-full mb-2" placeholder="Enter a word...">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Calculate</button>
+            </form>
+            {% if word and value %}
+                <div class="bg-white bg-opacity-10 rounded-md p-4 mb-4">
+                    <h2 class="text-xl mb-2">Word: {{ word }}</h2>
+                    <h2 class="text-xl">Imagination: {{ value }}</h2>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
